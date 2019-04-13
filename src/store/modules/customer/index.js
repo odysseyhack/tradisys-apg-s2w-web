@@ -1,4 +1,5 @@
 import { TaskStatus } from '@/models'
+import * as Mutations from './mutations-types'
 
 const state = {
   tasks: [
@@ -26,7 +27,14 @@ const state = {
   ]
 }
 
-const actions = {}
+const actions = {
+  acceptTask ({ commit }, key) {
+    commit(Mutations.SET_TASK_STATUS, { key, status: TaskStatus.PROGRESS })
+  },
+  completeTask ({ commit }, key) {
+    commit(Mutations.SET_TASK_STATUS, { key, status: TaskStatus.COMPLETED })
+  }
+}
 
 const getters = {
   tasks: state => state.tasks,
@@ -36,7 +44,15 @@ const getters = {
   tasksProgress: state => state.tasks.filter(t => t.status === TaskStatus.PROGRESS)
 }
 
-const mutations = {}
+const mutations = {
+  [Mutations.SET_TASK_STATUS] (state, payload) {
+    const { key, status } = payload
+    const index = state.tasks.findIndex(t => t.name === key)
+    if (index > -1) {
+      state.tasks[index].status = status
+    }
+  }
+}
 
 export default {
   namespaced: true,

@@ -53,24 +53,45 @@
       </b-card>
     </b-card-group>
     <hr>
-    <p class="h5">Current task</p>
-    <div class="card flex-row flex-wrap mt-3">
-      <div class="card-header border-0 p-0">
-          <img src="https://www.holland.com/static/design/0BC4B5D1-A9FA-4DDE-875A-3D3F8A9C9C35-1633-fsm/gfx/9d3d-b54db275f891_1900x1050.jpg" alt="" width="300">
-      </div>
-      <div class="card-block px-2 p-1">
-          <h4 class="card-title">Lorem ipsmus</h4>
-          <span class="card-text">Description.</span><br>
-      </div>
-      <div class="card-footer w-100 text-muted p-2">
-          <span>Somwergatn strasse 67 TH</span>
-          <p style="margin: 0 10px 0 0; display: inline-block; float:right; font-weight: 700;" class="mb-0">5 hours</p>
-      </div>
+    <p class="h5">Current tasks</p>
+
+    <div v-for="item in tasksProgress"
+         :key="item.name" class="shadow bg-light rounded">
+      <b-card
+        no-body
+        class="my-3"
+      >
+        <b-card-body>
+          <b-row no-gutters>
+            <b-col md="4">
+              <b-card-img :src="item.thumbnail" class="rounded-1"></b-card-img>
+            </b-col>
+            <b-col md="3" class="p-1 ml-2">
+              <b-card-title>
+                {{item.name}}
+              </b-card-title>
+              <b-card-sub-title class="mb-2">
+                Estimate: 2h 30min
+              </b-card-sub-title>
+              <b-card-text>
+                {{item.description}}
+              </b-card-text>
+            </b-col>
+          </b-row>
+        </b-card-body>
+
+        <b-card-footer>
+          <b-button @click="completeTask(item.name)" variant="success" size="sm">Complete</b-button>
+        </b-card-footer>
+      </b-card>
     </div>
+
   </div>
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
+
 export default {
   data () {
     return {
@@ -83,6 +104,16 @@ export default {
         time: 46
       }
     }
+  },
+  methods: {
+    ...mapActions({
+      completeTask: 'customer/completeTask'
+    })
+  },
+  computed: {
+    ...mapGetters({
+      tasksProgress: 'customer/tasksProgress'
+    })
   }
 }
 </script>

@@ -27,7 +27,7 @@
         </b-card-body>
 
         <b-card-footer>
-          <b-button variant="primary" size="sm">I do it!</b-button>
+          <b-button @click="acceptTask(item.name)" variant="primary" size="sm">I do it!</b-button>
         </b-card-footer>
       </b-card>
     </div>
@@ -36,9 +36,14 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
+  methods: {
+    ...mapActions({
+      acceptTask: 'customer/acceptTask'
+    })
+  },
   computed: {
     ...mapGetters({
       tasks: 'customer/tasks',
