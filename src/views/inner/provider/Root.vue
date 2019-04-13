@@ -4,12 +4,12 @@
       <ui-sidemenu color="rgb(189, 42, 70)">
         <div slot="items">
           <li class="nav-item">
-            <a class="nav-link active" href="#">
-              Dashboard <span class="sr-only">(current)</span>
-            </a>
+            <router-link class="nav-link" active-class="active" to="/provider">
+              Dashboard <span class="sr-only"></span>
+            </router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" active-class="active" to="provider/list">
+            <router-link class="nav-link" active-class="active" to="/provider/list">
               List <span class="sr-only"></span>
             </router-link>
           </li>
