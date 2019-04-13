@@ -1,19 +1,10 @@
 <template>
   <div class="container-fluid h-100">
     <div class="row h-100">
-      <ui-sidemenu color="rgb(189, 42, 70)">
-        <div slot="items">
-          <li class="nav-item">
-            <router-link class="nav-link" active-class="active" to="/provider" exact>
-              Dashboard <span class="sr-only"></span>
-            </router-link>
-          </li>
-          <li class="nav-item">
-            <router-link class="nav-link" active-class="active" to="/provider/list" exact>
-              List <span class="sr-only"></span>
-            </router-link>
-          </li>
-        </div>
+      <ui-sidemenu
+        color="rgb(189, 42, 70)"
+        :items="items"
+      >
       </ui-sidemenu>
       <div class="content col-lg-10">
         <transition
@@ -33,6 +24,20 @@ import UiSidemenu from '@/components/ui/Sidemenu.vue'
 export default {
   components: {
     UiSidemenu
+  },
+  data () {
+    return {
+      items: [
+        {
+          title: 'Dashboard',
+          to: '/provider'
+        },
+        {
+          title: 'List',
+          to: '/provider/list'
+        }
+      ]
+    }
   }
 }
 </script>

@@ -46,6 +46,10 @@ export default new Router({
         {
           path: 'list',
           component: () => import('@/views/inner/provider/List.vue')
+        },
+        {
+          path: 'fund',
+          component: () => import('@/views/inner/provider/Fund.vue')
         }
       ]
     },
