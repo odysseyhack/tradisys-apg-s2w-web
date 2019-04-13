@@ -7,6 +7,24 @@ export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
+    // ###########################
+    // #  Reg/Login/Restore API
+    // ###########################
+    {
+      path: '/register',
+      component: () => import('@/views/Register.vue')
+    },
+    {
+      path: '/login',
+      component: () => import('@/views/Register.vue')
+    },
+    {
+      path: '/restore',
+      component: () => import('@/views/Register.vue')
+    },
+    // ###########################
+    // #  Customer's API
+    // ###########################
     {
       path: '/customer',
       component: () => import('@/views/inner/customer/Root.vue'),
@@ -17,6 +35,9 @@ export default new Router({
         }
       ]
     },
+    // ###########################
+    // #  Providers's API
+    // ###########################
     {
       path: '/provider',
       component: () => import('@/views/inner/provider/Root.vue'),
@@ -27,6 +48,9 @@ export default new Router({
         }
       ]
     },
+    // ###########################
+    // #  Organization's API
+    // ###########################
     {
       path: '/org',
       component: () => import('@/views/inner/org/Root.vue'),

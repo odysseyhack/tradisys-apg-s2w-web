@@ -32,34 +32,31 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        form: {
-          email: '',
-          password: '',
-        },
-        show: true
-      }
-    },
-    methods: {
-      onSubmit(evt) {
-        evt.preventDefault()
-        alert(JSON.stringify(this.form))
+export default {
+  data () {
+    return {
+      form: {
+        email: '',
+        password: ''
       },
-      onReset(evt) {
-        evt.preventDefault()
-        // Reset our form values
-        this.form.email = ''
-        this.form.name = ''
-        this.show = false
-        this.$nextTick(() => {
-          this.show = true
-        })
-      }
+      show: true
+    }
+  },
+  methods: {
+    onSubmit (evt) {
+      evt.preventDefault()
+      alert(JSON.stringify(this.form))
+    },
+    onReset (evt) {
+      evt.preventDefault()
+      // Reset our form values
+      this.form.email = ''
+      this.form.name = ''
+      this.show = false
+      this.$nextTick(() => {
+        this.show = true
+      })
     }
   }
+}
 </script>
-
-
-
