@@ -11,7 +11,7 @@
       <tbody>
         <tr>
           <th scope="row">1</th>
-          <td>FCT fund</td>
+          <td>FCT Org</td>
           <td>
             <span class="new">
               new
@@ -20,7 +20,7 @@
         </tr>
         <tr>
           <th scope="row">2</th>
-          <td>SSH fund</td>
+          <td>SSH Org</td>
           <td>
             <span class="accepted">
               accepted
@@ -29,7 +29,7 @@
         </tr>
         <tr>
           <th scope="row">3</th>
-          <td>Capitan Ms fund</td>
+          <td>Capitan Ms Org</td>
           <td>
             <span class="accepted">
               accepted
