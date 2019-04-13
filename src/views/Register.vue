@@ -8,8 +8,7 @@
             <b-tabs card>
               <b-tab title="Customer" active>
                 <b-card-text>
-                  <h3>Customer</h3>
-                  <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+                  <b-form @submit="onSubmit" v-if="show">
                     <b-form-group
                       id="input-group-1"
                       label="First name"
@@ -25,7 +24,7 @@
 
                     <b-form-group
                       id="input-group-2"
-                      label="First name"
+                      label="Second name"
                       label-for="input-2"
                     >
                       <b-form-input
@@ -83,8 +82,7 @@
               </b-tab>
               <b-tab title="Organization">
                 <b-card-text>
-                  <h3>Organizations</h3>
-                  <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+                  <b-form @submit="onSubmit" v-if="show">
                     <b-form-group
                       id="input-group-10"
                       label="Name"
@@ -94,7 +92,7 @@
                         id="input-10"
                         v-model="organization.name"
                         required
-                        placeholder="FDT Fund"
+                        placeholder="Name"
                       ></b-form-input>
                     </b-form-group>
 
@@ -174,7 +172,11 @@ export default {
 
   .wrap-register {
     height: 100vh;
+    background: #2575fc;
+    background: -webkit-linear-gradient(left, #6a11cb, #2575fc);
+    background: -o-linear-gradient(left, #6a11cb, #2575fc);
     background: -moz-linear-gradient(left, #6a11cb, #2575fc);
+    background: linear-gradient(left, #6a11cb, #2575fc);
 
     .btn-primary {
       background: #111111;
