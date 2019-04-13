@@ -4,18 +4,28 @@
       <ui-sidemenu color="rgb(42, 189, 135)">
         <div slot="items">
           <li class="nav-item">
-            <router-link class="nav-link" active-class="active" to="/org">
+            <router-link class="nav-link" active-class="active" to="/org" exact="true">
               Dashboard <span class="sr-only"></span>
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" active-class="active" to="/org/tasks/progress">
+            <router-link class="nav-link" active-class="active" to="/org/tasks/open" exact="true">
+              Open <span class="sr-only"></span>
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" active-class="active" to="/org/tasks/progress" exact="true">
               In Progress <span class="sr-only"></span>
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" active-class="active" to="/org/tasks/complete">
-              Complete <span class="sr-only"></span>
+            <router-link class="nav-link" active-class="active" to="/org/tasks/completed" exact="true">
+              Completed <span class="sr-only"></span>
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" active-class="active" to="/org/tasks/rejected" exact="true">
+              Rejected <span class="sr-only"></span>
             </router-link>
           </li>
         </div>

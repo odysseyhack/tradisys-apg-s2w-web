@@ -1,9 +1,12 @@
 <template>
-  <nav class="col-md-2 d-none d-md-block sidebar" :style="style">
+  <nav class="col-md-2 d-none d-md-block sidebar px-0" :style="style">
     <div class="sidebar-sticky">
-      <ul class="nav flex-column">
-        <slot name="items"></slot>
-      </ul>
+      <div class="items shadow-none m-1 p-1 rounded">
+        <p class="h6 text-white-50 pl-1">Menu</p>
+        <ul class="nav flex-column">
+          <slot name="items"></slot>
+        </ul>
+      </div>
     </div>
   </nav>
 </template>
@@ -30,9 +33,19 @@ export default {
   .sidebar {
     height: 100%;
 
+    .items {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
     .nav {
       a {
         color: white;
+
+        &.active {
+          transition: background-color 0.3s ease-in-out;
+          border-radius: 0.25rem;
+          background-color: rgba(255, 255, 255, 0.2);
+        }
       }
     }
   }

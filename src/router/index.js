@@ -61,12 +61,20 @@ export default new Router({
           component: () => import('@/views/inner/org/Dashboard.vue')
         },
         {
-          path: 'tasks/progress',
-          component: () => import('@/views/inner/org/TasksComplete.vue')
+          path: 'tasks/open',
+          component: () => import('@/views/inner/org/tasks/Open.vue')
         },
         {
-          path: 'tasks/complete',
-          component: () => import('@/views/inner/org/TasksProgress.vue')
+          path: 'tasks/progress',
+          component: () => import('@/views/inner/org/tasks/Progress.vue')
+        },
+        {
+          path: 'tasks/completed',
+          component: () => import('@/views/inner/org/tasks/Completed.vue')
+        },
+        {
+          path: 'tasks/rejected',
+          component: () => import('@/views/inner/org/tasks/Rejected.vue')
         }
       ]
     }

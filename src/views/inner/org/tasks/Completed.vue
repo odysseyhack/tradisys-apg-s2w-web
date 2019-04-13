@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Tasks done</h1>
+    <h1>Tasks completed</h1>
   </div>
 </template>
 
