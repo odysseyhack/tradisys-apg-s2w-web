@@ -11,7 +11,12 @@
         </div>
       </ui-sidemenu>
       <div class="content col-lg-10">
-        <router-view></router-view>
+        <transition
+          name="fade"
+          mode="out-in"
+        >
+          <router-view/>
+        </transition>
       </div>
     </div>
   </div>
