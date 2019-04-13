@@ -12,4 +12,9 @@
     line-height: 1.5;
     color: #212529;
   }
+
+  .content {
+    height: inherit;
+    overflow-y: scroll;
+  }
 </style>

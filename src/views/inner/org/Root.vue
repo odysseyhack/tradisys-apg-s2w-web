@@ -20,7 +20,7 @@
           </li>
         </div>
       </ui-sidemenu>
-      <div class="col-lg-10">
+      <div class="content col-lg-10">
         <router-view></router-view>
       </div>
     </div>
