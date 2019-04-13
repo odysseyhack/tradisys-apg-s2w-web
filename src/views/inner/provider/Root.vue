@@ -15,7 +15,7 @@
           </li>
         </div>
       </ui-sidemenu>
-      <div class="col-lg-10">
+      <div class="col-lg-10" style="padding: 0;">
         <router-view></router-view>
       </div>
     </div>
