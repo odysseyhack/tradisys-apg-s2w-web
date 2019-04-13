@@ -4,7 +4,11 @@
       <div class="items shadow-none m-1 p-1 rounded">
         <p class="h6 text-white-50 pl-1">Menu</p>
         <ul class="nav flex-column">
-          <slot name="items"></slot>
+          <li v-for="item in items" class="nav-item" :key="item.to">
+            <router-link class="nav-link" active-class="active" :to="item.to" exact>
+              {{item.title}} <span class="sr-only"></span>
+            </router-link>
+          </li>
         </ul>
       </div>
     </div>
@@ -17,6 +21,10 @@ export default {
     color: {
       type: String,
       default: '#000'
+    },
+    items: {
+      type: Array,
+      default: () => []
     }
   },
   computed: {
@@ -33,7 +41,7 @@ export default {
   .sidebar {
     height: 100%;
 
-    .items {
+    .items, .actions {
       background-color: rgba(0, 0, 0, 0.1);
     }
 

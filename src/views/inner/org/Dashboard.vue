@@ -57,7 +57,7 @@
         show-progress
         :value="(tasks.open / tasks.total)"
         variant="secondary">
-        {{tasks.progress}}
+        {{tasks.open}}
       </b-progress-bar>
       <b-progress-bar
         show-progress
