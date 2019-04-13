@@ -8,6 +8,14 @@ export default {
     {
       path: '',
       component: () => import('@/views/inner/customer/Dashboard.vue')
+    },
+    {
+      path: 'tasks',
+      component: () => import('@/views/inner/customer/tasks/Tasks.vue')
+    },
+    {
+      path: 'tasks/completed',
+      component: () => import('@/views/inner/customer/tasks/Completed.vue')
     }
   ]
 }
