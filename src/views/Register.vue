@@ -2,8 +2,8 @@
   <div class="wrap-register">
     <div class="container">
       <div class="row">
-        <div class="col-6">
-          <h1 class="main-header" >registration</h1>
+        <div class="col-6 align-self-center">
+          <h1 class="main-header text-center" >registration</h1>
         </div>
         <div class="col-6">
           <b-card no-body>

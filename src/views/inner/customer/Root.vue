@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid h-100">
     <div class="row h-100">
-      <ui-sidemenu>
+      <ui-sidemenu color="rgb(37, 117, 252)">
         <div slot="items">
           <li class="nav-item">
             <a class="nav-link active" href="#">
