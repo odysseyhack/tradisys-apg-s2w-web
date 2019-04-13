@@ -10,9 +10,43 @@ const state = {
 }
 
 const actions = {
-  async fetchTasks ({ commit }) {
+  async fetchAllTasks ({ commit }) {
     try {
-      const tasks = await BackendApi.Org.getTasks()
+      const tasks = await BackendApi.Org.getAllTasks()
+      const open = []
+      const progress = []
+      const completed = []
+      const rejected = []
+
+      for (const task of tasks) {
+        if (task.status === TaskStatus.OPEN) {
+          open.push(task)
+          continue
+        }
+        if (task.status === TaskStatus.PROGRESS) {
+          progress.push(task)
+          continue
+        }
+        if (task.status === TaskStatus.COMPLETED) {
+          completed.push(task)
+          continue
+        }
+        if (task.status === TaskStatus.REJECTED) {
+          rejected.push(task)
+        }
+      }
+
+      commit(Mutations.SET_TASKS_OPEN, open)
+      commit(Mutations.SET_TASKS_PROGRESS, progress)
+      commit(Mutations.SET_TASKS_REJECTED, rejected)
+      commit(Mutations.SET_TASKS_COMPLETED, completed)
+    } catch (e) {
+      console.error(e)
+    }
+  },
+  async fetchTasksByOrgId ({ commit }, id) {
+    try {
+      const tasks = await BackendApi.Org.getTasksByOrgId(id)
       const open = []
       const progress = []
       const completed = []

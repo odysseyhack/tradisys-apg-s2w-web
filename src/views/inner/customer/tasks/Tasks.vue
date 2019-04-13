@@ -1,87 +1,53 @@
 <template>
-<div class="container-fluid">
-  <div class="wrap-tasks mt-3">
+  <div class="container-fluid">
 
-      <div class="card flex-row flex-wrap mt-3">
-        <div class="card-header border-0 p-0">
-            <img src="https://www.holland.com/static/design/0BC4B5D1-A9FA-4DDE-875A-3D3F8A9C9C35-1633-fsm/gfx/9d3d-b54db275f891_1900x1050.jpg" alt="" width="300">
-        </div>
-        <div class="card-block px-2 p-1">
-            <h4 class="card-title">Lorem ipsmus</h4>
-            <span class="card-text">Description.</span><br>
+    <div v-for="item in tasksOpen"
+         :key="item.name" class="shadow bg-light rounded">
+      <b-card
+        no-body
+        class="my-3"
+      >
+        <b-card-body>
+          <b-row no-gutters>
+            <b-col md="4">
+              <b-card-img :src="item.thumbnail" class="rounded-1"></b-card-img>
+            </b-col>
+            <b-col md="3" class="p-1 ml-2">
+              <b-card-title>
+                {{item.name}}
+              </b-card-title>
+              <b-card-sub-title class="mb-2">
+                Estimate: 2h 30min
+              </b-card-sub-title>
+              <b-card-text>
+                {{item.description}}
+              </b-card-text>
+            </b-col>
+          </b-row>
+        </b-card-body>
 
-        </div>
-        <div class="card-footer w-100 text-muted p-2">
-            <button href="#" class="btn btn-success">I do that!</button>
-            <p style="margin: 5px 10px 0 0; display: inline-block; float:right; font-weight: 700;" class="mb-0">5 hours</p>
-        </div>
-      </div>
+        <b-card-footer>
+          <b-button variant="primary" size="sm">I do it!</b-button>
+        </b-card-footer>
+      </b-card>
+    </div>
 
-      <div class="card flex-row flex-wrap mt-3">
-        <div class="card-header border-0 p-0">
-            <img src="https://www.holland.com/static/design/0BC4B5D1-A9FA-4DDE-875A-3D3F8A9C9C35-1633-fsm/gfx/9d3d-b54db275f891_1900x1050.jpg" alt="" width="300">
-        </div>
-        <div class="card-block px-2 p-1">
-            <h4 class="card-title">Lorem ipsmus</h4>
-            <span class="card-text">Description.</span><br>
-
-        </div>
-        <div class="card-footer w-100 text-muted p-2">
-            <button href="#" class="btn btn-success">I do that!</button>
-            <p style="margin: 5px 10px 0 0; display: inline-block; float:right; font-weight: 700;" class="mb-0">5 hours</p>
-        </div>
-      </div>
-
-      <div class="card flex-row flex-wrap mt-3">
-        <div class="card-header border-0 p-0">
-            <img src="https://www.holland.com/static/design/0BC4B5D1-A9FA-4DDE-875A-3D3F8A9C9C35-1633-fsm/gfx/9d3d-b54db275f891_1900x1050.jpg" alt="" width="300">
-        </div>
-        <div class="card-block px-2 p-1">
-            <h4 class="card-title">Lorem ipsmus</h4>
-            <span class="card-text">Description.</span><br>
-
-        </div>
-        <div class="card-footer w-100 text-muted p-2">
-            <button href="#" class="btn btn-success">I do that!</button>
-            <p style="margin: 5px 10px 0 0; display: inline-block; float:right; font-weight: 700;" class="mb-0">5 hours</p>
-        </div>
-      </div>
-
-      <div class="card flex-row flex-wrap mt-3">
-        <div class="card-header border-0 p-0">
-            <img src="https://www.holland.com/static/design/0BC4B5D1-A9FA-4DDE-875A-3D3F8A9C9C35-1633-fsm/gfx/9d3d-b54db275f891_1900x1050.jpg" alt="" width="300">
-        </div>
-        <div class="card-block px-2 p-1">
-            <h4 class="card-title">Lorem ipsmus</h4>
-            <span class="card-text">Description.</span><br>
-
-        </div>
-        <div class="card-footer w-100 text-muted p-2">
-            <button href="#" class="btn btn-success">I do that!</button>
-            <p style="margin: 5px 10px 0 0; display: inline-block; float:right; font-weight: 700;" class="mb-0">5 hours</p>
-        </div>
-      </div>
-
-      <div class="card flex-row flex-wrap mt-3">
-        <div class="card-header border-0 p-0">
-            <img src="https://www.holland.com/static/design/0BC4B5D1-A9FA-4DDE-875A-3D3F8A9C9C35-1633-fsm/gfx/9d3d-b54db275f891_1900x1050.jpg" alt="" width="300">
-        </div>
-        <div class="card-block px-2 p-1">
-            <h4 class="card-title">Lorem ipsmus</h4>
-            <span class="card-text">Description.</span><br>
-
-        </div>
-        <div class="card-footer w-100 text-muted p-2">
-            <button href="#" class="btn btn-success">I do that!</button>
-            <p style="margin: 5px 10px 0 0; display: inline-block; float:right; font-weight: 700;" class="mb-0">5 hours</p>
-        </div>
-      </div>
   </div>
-</div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
+  computed: {
+    ...mapGetters({
+      tasks: 'customer/tasks',
+      tasksOpen: 'customer/tasksOpen',
+      tasksProgress: 'customer/tasksProgress',
+      tasksCompleted: 'customer/tasksCompleted',
+      tasksRejected: 'customer/tasksRejected'
+    })
+  }
 }
 </script>
 
