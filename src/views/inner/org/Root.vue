@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import UiSidemenu from '@/components/ui/Sidemenu.vue'
 
 export default {
@@ -50,6 +51,14 @@ export default {
         }
       ]
     }
+  },
+  created () {
+    this.fetchTasks()
+  },
+  methods: {
+    ...mapActions({
+      fetchTasks: 'org/fetchTasks'
+    })
   }
 }
 </script>
