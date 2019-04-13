@@ -15,3 +15,15 @@ export const register = async (
 
   return response.json()
 }
+
+export const getTasks = async () => {
+  const response = await fetch(urlJoin(
+    config.api.backend,
+    config.api.endpoints.org.tasks
+  ), {
+    method: 'GET',
+    headers: jsonHeaders
+  })
+
+  return response.json()
+}
