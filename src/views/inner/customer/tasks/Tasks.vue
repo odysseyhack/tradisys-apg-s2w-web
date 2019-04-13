@@ -9,7 +9,6 @@
         <div class="card-block px-2 p-1">
             <h4 class="card-title">Lorem ipsmus</h4>
             <span class="card-text">Description.</span><br>
-
         </div>
         <div class="card-footer w-100 text-muted p-2">
             <button class="btn btn-success">I do that!</button>

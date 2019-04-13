@@ -48,6 +48,10 @@ export default {
         {
           title: 'Rejected',
           to: '/org/tasks/rejected'
+        },
+        {
+          title: 'Create task',
+          to: '/org/tasks/create'
         }
       ]
     }
