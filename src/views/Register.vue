@@ -2,8 +2,10 @@
   <div class="wrap-register">
     <div class="container">
       <div class="row">
-        <div class="col-4"></div>
-        <div class="col-4">
+        <div class="col-6">
+          <h1 class="main-header" >registration</h1>
+        </div>
+        <div class="col-6">
           <b-card no-body>
             <b-tabs card>
               <b-tab title="Customer" active>
@@ -131,7 +133,6 @@
             </b-tabs>
           </b-card>
         </div>
-        <div class="col-4"></div>
       </div>
     </div>
   </div>
@@ -234,6 +235,13 @@ export default {
 
     .nav-link.active:hover {
       background-color: white;
+    }
+
+    .main-header {
+      text-transform: uppercase;
+      color: whitesmoke;
+      font-family: Arial;
+      font-weight: 200;
     }
   }
 
