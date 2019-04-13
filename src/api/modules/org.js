@@ -45,7 +45,7 @@ export const getTasksByOrgId = async (id) => {
 export const createTaskById = async (task) => {
   const response = await fetch(urlJoin(
     config.api.backend,
-    config.api.endpoints.org.tasks,
+    config.api.endpoints.org.tasks
   ), {
     method: 'POST',
     headers: jsonHeaders,
