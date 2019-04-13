@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/views/Home.vue'
 
 Vue.use(Router)
 
@@ -9,19 +8,34 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/register',
-      name: 'register',
-      component: Home
+      path: '/customer',
+      component: () => import('@/views/inner/customer/Root.vue'),
+      children: [
+        {
+          path: '',
+          component: () => import('@/views/inner/customer/Dashboard.vue')
+        }
+      ]
     },
     {
-      path: '/',
-      name: 'home',
-      component: Home
+      path: '/provider',
+      component: () => import('@/views/inner/provider/Root.vue'),
+      children: [
+        {
+          path: '',
+          component: () => import('@/views/inner/provider/Dashboard.vue')
+        }
+      ]
     },
     {
-      path: '/about',
-      name: 'about',
-      component: () => import('@/views/About.vue')
+      path: '/org',
+      component: () => import('@/views/inner/org/Root.vue'),
+      children: [
+        {
+          path: '',
+          component: () => import('@/views/inner/org/Dashboard.vue')
+        }
+      ]
     }
   ]
 })
