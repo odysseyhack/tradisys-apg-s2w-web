@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-4"></div>
         <div class="col-4">
-          <b-card no-body style="margin-top: 20vh;">
+          <b-card no-body>
             <b-tabs card>
               <b-tab title="Customer" active>
                 <b-card-text>
@@ -138,10 +138,7 @@
 </template>
 
 <script>
-
 export default {
-
-  name: 'Register',
   data () {
     return {
       user: {
@@ -169,9 +166,10 @@ export default {
 </script>
 
 <style lang="scss">
-
   .wrap-register {
-    height: 100vh;
+    height: 100%;
+    display: flex;
+    align-items: center;
     background: #2575fc;
     background: -webkit-linear-gradient(left, #6a11cb, #2575fc);
     background: -o-linear-gradient(left, #6a11cb, #2575fc);
