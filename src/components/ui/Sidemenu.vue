@@ -41,7 +41,7 @@ export default {
   .sidebar {
     height: 100%;
 
-    .items, .actions {
+    .items {
       background-color: rgba(0, 0, 0, 0.1);
     }
 
