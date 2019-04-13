@@ -4,27 +4,27 @@
       <ui-sidemenu color="rgb(42, 189, 135)">
         <div slot="items">
           <li class="nav-item">
-            <router-link class="nav-link" active-class="active" to="/org" exact="true">
+            <router-link class="nav-link" active-class="active" to="/org" exact>
               Dashboard <span class="sr-only"></span>
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" active-class="active" to="/org/tasks/open" exact="true">
+            <router-link class="nav-link" active-class="active" to="/org/tasks/open" exact>
               Open <span class="sr-only"></span>
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" active-class="active" to="/org/tasks/progress" exact="true">
+            <router-link class="nav-link" active-class="active" to="/org/tasks/progress" exact>
               In Progress <span class="sr-only"></span>
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" active-class="active" to="/org/tasks/completed" exact="true">
+            <router-link class="nav-link" active-class="active" to="/org/tasks/completed" exact>
               Completed <span class="sr-only"></span>
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" active-class="active" to="/org/tasks/rejected" exact="true">
+            <router-link class="nav-link" active-class="active" to="/org/tasks/rejected" exact>
               Rejected <span class="sr-only"></span>
             </router-link>
           </li>

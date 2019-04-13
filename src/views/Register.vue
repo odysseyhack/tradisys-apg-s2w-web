@@ -139,7 +139,7 @@
 </template>
 
 <script>
-import api from '@/api'
+import { BackendApi } from '@/api'
 
 export default {
   data () {
@@ -163,7 +163,7 @@ export default {
     async onCustomerSubmit (evt) {
       evt.preventDefault()
       try {
-        await api.Customer.register(this.customer)
+        await BackendApi.Customer.register(this.customer)
       } catch (e) {
         console.error(e)
       }
@@ -171,7 +171,7 @@ export default {
     async onOrgSubmit (evt) {
       evt.preventDefault()
       try {
-        const a = await api.Org.register(this.organization)
+        const a = await BackendApi.Org.register(this.organization)
         console.log(a)
       } catch (e) {
         console.error(e)

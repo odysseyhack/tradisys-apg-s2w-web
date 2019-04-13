@@ -2,6 +2,23 @@
   <router-view/>
 </template>
 
+<script>
+import { mapActions } from 'vuex'
+
+export default {
+  mounted () {
+    setTimeout(() => {
+      this.setWavesKeeperInitialization()
+    }, 500)
+  },
+  methods: {
+    ...mapActions({
+      setWavesKeeperInitialization: 'setWavesKeeperInitialization'
+    })
+  }
+}
+</script>
+
 <style lang="scss">
   body, html {
     height: 100%;

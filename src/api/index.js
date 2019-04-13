@@ -1,7 +1,4 @@
-import * as Customer from './modules/customer'
-import * as Org from './modules/org'
+import * as BackendApi from './backend'
+import * as WavesApi from './waves'
 
-export default {
-  Customer,
-  Org
-}
+export { BackendApi, WavesApi }
