@@ -59,6 +59,14 @@ export default new Router({
         {
           path: '',
           component: () => import('@/views/inner/org/Dashboard.vue')
+        },
+        {
+          path: 'tasks/progress',
+          component: () => import('@/views/inner/org/TasksComplete.vue')
+        },
+        {
+          path: 'tasks/complete',
+          component: () => import('@/views/inner/org/TasksProgress.vue')
         }
       ]
     }
