@@ -12,6 +12,10 @@ export default {
     {
       path: 'list',
       component: () => import('@/views/inner/provider/List.vue')
+    },
+    {
+      path: 'organization',
+      component: () => import('@/views/inner/provider/Organization.vue')
     }
   ]
 }

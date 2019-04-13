@@ -78,7 +78,7 @@
       </b-progress-bar>
     </b-progress>
     <hr>
-    <p class="h5">Funds overview</p>
+    <p class="h5">Organization overview</p>
      <b-card-group deck>
       <b-card
         style="background-color: #1cc88a; color: white;"
