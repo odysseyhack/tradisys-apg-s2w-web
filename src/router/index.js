@@ -42,6 +42,10 @@ export default new Router({
         {
           path: '',
           component: () => import('@/views/inner/provider/Dashboard.vue')
+        },
+        {
+          path: 'list',
+          component: () => import('@/views/inner/provider/List.vue')
         }
       ]
     },

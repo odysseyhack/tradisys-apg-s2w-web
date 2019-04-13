@@ -3,14 +3,14 @@
     <div class="container">
       <div class="row">
         <div class="col-6 align-self-center">
-          <h1 class="main-header text-center" >registration</h1>
+          <h1 class="main-header text-center">registration</h1>
         </div>
         <div class="col-6">
           <b-card no-body>
             <b-tabs card>
               <b-tab title="Customer" active>
                 <b-card-text>
-                  <b-form @submit="onSubmit" v-if="show">
+                  <b-form @submit="onCustomerSubmit" v-if="show">
                     <b-form-group
                       id="input-group-1"
                       label="First name"
@@ -18,7 +18,7 @@
                     >
                       <b-form-input
                         id="input-1"
-                        v-model="user.firstName"
+                        v-model="customer.firstName"
                         required
                         placeholder="Bob"
                       ></b-form-input>
@@ -31,7 +31,7 @@
                     >
                       <b-form-input
                         id="input-2"
-                        v-model="user.secondName"
+                        v-model="customer.secondName"
                         required
                         placeholder="Rozenberg"
                       ></b-form-input>
@@ -44,7 +44,7 @@
                     >
                       <b-form-input
                         id="input-3"
-                        v-model="user.bsn"
+                        v-model="customer.bsn"
                         required
                         placeholder="2345 2431 342"
                       ></b-form-input>
@@ -57,7 +57,7 @@
                     >
                       <b-form-input
                         id="input-4"
-                        v-model="user.address"
+                        v-model="customer.address"
                         required
                         placeholder="Surinamestraat 27 2585 GJ  Den Haag"
                       ></b-form-input>
@@ -70,7 +70,7 @@
                     >
                       <b-form-input
                         id="input-5"
-                        v-model="user.birth"
+                        v-model="customer.birth"
                         type="date"
                         required
                       ></b-form-input>
@@ -84,7 +84,7 @@
               </b-tab>
               <b-tab title="Organization">
                 <b-card-text>
-                  <b-form @submit="onSubmit" v-if="show">
+                  <b-form @submit="onOrgSubmit" v-if="show">
                     <b-form-group
                       id="input-group-10"
                       label="Name"
@@ -139,10 +139,12 @@
 </template>
 
 <script>
+import api from '@/api'
+
 export default {
   data () {
     return {
-      user: {
+      customer: {
         firstName: '',
         secondName: '',
         bsn: '',
@@ -158,9 +160,22 @@ export default {
     }
   },
   methods: {
-    onSubmit (evt) {
+    async onCustomerSubmit (evt) {
       evt.preventDefault()
-      alert(JSON.stringify(this.user))
+      try {
+        await api.Customer.register(this.customer)
+      } catch (e) {
+        console.error(e)
+      }
+    },
+    async onOrgSubmit (evt) {
+      evt.preventDefault()
+      try {
+        const a = await api.Org.register(this.organization)
+        console.log(a)
+      } catch (e) {
+        console.error(e)
+      }
     }
   }
 }
