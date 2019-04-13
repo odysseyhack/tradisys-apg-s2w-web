@@ -57,11 +57,12 @@ export default {
     }
   },
   created () {
-    this.fetchTasks()
+    // FIXME: use getters
+    this.fetchTasksByOrgId(1)
   },
   methods: {
     ...mapActions({
-      fetchTasks: 'org/fetchTasks'
+      fetchTasksByOrgId: 'org/fetchTasksByOrgId'
     })
   }
 }
