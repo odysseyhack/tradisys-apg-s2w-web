@@ -187,10 +187,10 @@ export default {
     display: flex;
     align-items: center;
     background: #2575fc;
-    background: -webkit-linear-gradient(left, #6a11cb, #2575fc);
-    background: -o-linear-gradient(left, #6a11cb, #2575fc);
-    background: -moz-linear-gradient(left, #6a11cb, #2575fc);
-    background: linear-gradient(left, #6a11cb, #2575fc);
+    background: -webkit-linear-gradient(to left, #6a11cb, #2575fc);
+    background: -o-linear-gradient(to left, #6a11cb, #2575fc);
+    background: -moz-linear-gradient(to left, #6a11cb, #2575fc);
+    background: linear-gradient(to left, #6a11cb, #2575fc);
 
     .btn-primary {
       background: #111111;
@@ -204,10 +204,10 @@ export default {
 
     .btn-primary:active {
       background: #2575fc;
-      background: -webkit-linear-gradient(right, #6a11cb, #2575fc);
-      background: -o-linear-gradient(right, #6a11cb, #2575fc);
-      background: -moz-linear-gradient(right, #6a11cb, #2575fc);
-      background: linear-gradient(right, #6a11cb, #2575fc);
+      background: -webkit-linear-gradient(to left, #6a11cb, #2575fc);
+      background: -o-linear-gradient(to left, #6a11cb, #2575fc);
+      background: -moz-linear-gradient(to left, #6a11cb, #2575fc);
+      background: linear-gradient(to left, #6a11cb, #2575fc);
       -webkit-transition: all 0.4s;
       -o-transition: all 0.4s;
       -moz-transition: all 0.4s;
@@ -255,7 +255,7 @@ export default {
     .main-header {
       text-transform: uppercase;
       color: whitesmoke;
-      font-family: Arial;
+      font-family: Arial, sans-serif;
       font-weight: 200;
     }
   }
