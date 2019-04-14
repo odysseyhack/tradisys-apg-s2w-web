@@ -28,6 +28,10 @@ export default {
     {
       path: 'tasks/rejected',
       component: () => import('@/views/inner/org/tasks/Rejected.vue')
+    },
+    {
+      path: 'tasks/create',
+      component: () => import('@/views/inner/org/tasks/Create.vue')
     }
   ]
 }
