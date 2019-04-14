@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid">
-    <h1 class="display-4">The Nuns With Guns</h1>
+    <h1 class="display-4">Social Organization</h1>
     <hr>
     <p class="h5">Overview</p>
     <b-card-group deck>
