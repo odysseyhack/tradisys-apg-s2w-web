@@ -26,7 +26,7 @@
       </b-card-body>
 
       <b-card-footer>
-        <b-button variant="warning" size="sm">Close it!</b-button>
+        <b-button variant="warning" size="sm" @click="deleteTask(item.name)">Close it!</b-button>
       </b-card-footer>
     </b-card>
   </div>
@@ -34,9 +34,14 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
+  methods: {
+    ...mapActions({
+      deleteTask: 'org/deleteTask'
+    })
+  },
   computed: {
     ...mapGetters({
       tasksOpen: 'org/tasksOpen'

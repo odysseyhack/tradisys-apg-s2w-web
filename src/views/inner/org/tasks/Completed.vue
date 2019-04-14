@@ -26,7 +26,7 @@
       </b-card-body>
 
       <b-card-footer>
-        <b-button variant="success" size="sm">Accept!</b-button>
+        <b-button variant="success" size="sm" @click="closeTask(item.name)">Accept!</b-button>
       </b-card-footer>
     </b-card>
   </div>
@@ -34,9 +34,14 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
+  methods: {
+    ...mapActions({
+      closeTask: 'org/closeTask'
+    })
+  },
   computed: {
     ...mapGetters({
       tasksCompleted: 'org/tasksCompleted'

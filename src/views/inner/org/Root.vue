@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
 import UiSidemenu from '@/components/ui/Sidemenu.vue'
 
 export default {
@@ -55,14 +54,6 @@ export default {
         }
       ]
     }
-  },
-  created () {
-    this.fetchTasksByOrgId('')
-  },
-  methods: {
-    ...mapActions({
-      fetchTasksByOrgId: 'org/fetchTasksByOrgId'
-    })
   }
 }
 </script>
