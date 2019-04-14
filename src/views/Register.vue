@@ -154,6 +154,9 @@ export default {
       organization: {
         name: '',
         address: '',
+        role: 'ORGANIZATION',
+        type: 'ORGANIZATION',
+        status: 'VERIFIED',
         rsin: ''
       },
       show: true

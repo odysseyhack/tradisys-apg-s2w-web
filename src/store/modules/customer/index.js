@@ -12,7 +12,7 @@ const state = {
     },
     {
       name: 'Nurse / caregiver individual health care',
-      description: 'Stichting ThuisPoli is looking for a socially committed nurse / caregiver individual health care to assist us in providing care and maintaining a good standard of practical vocational training. The client target group of Stichting ThuisPoli is quite diverse; ranging from people who can use that bit of extra help, but lack the medical grounds for these costs to be reimbursed, to undocumented people with cancer who have no access to regular care. We are looking for someone who, among other things, can accompany our interns on client visits and help them completing their assignments for the aptitude tests.',
+      description: 'Stichting ThuisPoli is looking for a socially committed nurse / caregiver individual health care to assist us in providing care and maintaining a good standard of practical vocational training.',
       thumbnail: 'https://www.nursingworld.org/~4aeb87/globalassets/practiceandpolicy/workforce/staff.jpg ',
       organization: 'organisation',
       status: TaskStatus.OPEN
