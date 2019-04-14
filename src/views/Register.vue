@@ -63,19 +63,6 @@
                       ></b-form-input>
                     </b-form-group>
 
-                    <b-form-group
-                      id="input-group-5"
-                      label="Your birth"
-                      label-for="input-5"
-                    >
-                      <b-form-input
-                        id="input-5"
-                        v-model="customer.birth"
-                        type="date"
-                        required
-                      ></b-form-input>
-                    </b-form-group>
-
                     <div class="button-wrap">
                       <b-button style="float: right" type="submit" variant="primary">Submit</b-button>
                     </div>
@@ -149,7 +136,8 @@ export default {
         secondName: '',
         bsn: '',
         address: '',
-        birth: ''
+        role: 'CUSTOMER',
+        type: 'CUSTOMER'
       },
       organization: {
         name: '',

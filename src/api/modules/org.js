@@ -11,7 +11,7 @@ export const register = async (
   ), {
     method: 'POST',
     headers: jsonHeaders,
-    data: JSON.stringify(data)
+    body: JSON.stringify(data)
   })
 
   return response.json()
@@ -49,7 +49,7 @@ export const createTaskById = async (task) => {
   ), {
     method: 'POST',
     headers: jsonHeaders,
-    data: JSON.stringify(task)
+    body: JSON.stringify(task)
   })
 
   return response.json()
