@@ -46,19 +46,18 @@ export default {
           to: '/org/tasks/completed'
         },
         {
-          title: 'Rejected',
-          to: '/org/tasks/rejected'
+          title: 'Closed',
+          to: '/org/tasks/closed'
         },
         {
-          title: 'Create task',
-          to: '/org/tasks/create'
+          title: 'Rejected',
+          to: '/org/tasks/rejected'
         }
       ]
     }
   },
   created () {
-    // FIXME: use getters
-    this.fetchTasksByOrgId(1)
+    this.fetchTasksByOrgId('')
   },
   methods: {
     ...mapActions({

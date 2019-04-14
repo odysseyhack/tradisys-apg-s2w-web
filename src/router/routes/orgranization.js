@@ -22,12 +22,12 @@ export default {
       component: () => import('@/views/inner/org/tasks/Completed.vue')
     },
     {
-      path: 'tasks/rejected',
-      component: () => import('@/views/inner/org/tasks/Rejected.vue')
+      path: 'tasks/closed',
+      component: () => import('@/views/inner/org/tasks/Closed.vue')
     },
     {
-      path: 'tasks/create',
-      component: () => import('@/views/inner/org/tasks/Create.vue')
+      path: 'tasks/rejected',
+      component: () => import('@/views/inner/org/tasks/Rejected.vue')
     }
   ]
 }
