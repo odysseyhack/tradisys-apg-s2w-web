@@ -5,13 +5,10 @@
 
 export default {
   api: {
-    backend: 'http://172.16.162.80/api',
+    backend: 'http://localhost:8081/',
     endpoints: {
-      customer: {
-        register: 'customer/register'
-      },
       org: {
-        register: 'org/register',
+        register: 'api/register',
         tasks: 'org/tasks'
       }
     }
