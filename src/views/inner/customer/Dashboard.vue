@@ -2,7 +2,8 @@
   <div class="container-fluid">
     <h1 class="display-4">{{ user.firstName}} {{ user.lastName}}</h1>
     <div class="progress level">
-      <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+      <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
+           aria-valuemax="100"></div>
     </div>
     <span class="level-info"> 8 lvl</span>
     <hr>
@@ -39,7 +40,7 @@
       >
         <b-card-text>
           <h2 class="font-weight-bold">
-            {{user.completed}}
+            {{tasksClosed.length}}
           </h2>
         </b-card-text>
       </b-card>
@@ -106,7 +107,9 @@
 </template>
 
 <script>
+import { WavesApi } from '@/api'
 import { mapGetters, mapActions } from 'vuex'
+import { balance } from '@/api/waves'
 
 export default {
   data () {
@@ -114,9 +117,8 @@ export default {
       user: {
         firstName: 'Rob',
         lastName: 'Tennesy',
-        karma: 216,
-        tokens: 31,
-        completed: 7,
+        karma: 0,
+        tokens: 0,
         time: 46
       }
     }
@@ -126,9 +128,19 @@ export default {
       completeTask: 'customer/completeTask'
     })
   },
+  async created () {
+    const {
+      balances: [karma = { balance }, voting = { balance }]
+    } = await WavesApi.balance(this.customer.address)
+
+    this.user.karma = karma.balance
+    this.user.tokens = voting.balance
+  },
   computed: {
     ...mapGetters({
-      tasksProgress: 'customer/tasksProgress'
+      customer: 'user',
+      tasksProgress: 'customer/tasksProgress',
+      tasksClosed: 'customer/tasksClosed'
     })
   }
 }

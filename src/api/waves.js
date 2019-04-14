@@ -3,6 +3,9 @@
 // Sometimes it happens, sometimes not.
 //
 // Here, Waves is simple get function and returns object on demand.
+import urlJoin from 'url-join'
+import { jsonHeaders } from '@/api/utils'
+
 export const Setup = () => {
   let waves
   let injected = false
@@ -49,3 +52,15 @@ export const signAndPublishTransaction = async tx => Waves()
 
 export const signTransactionPackage = async txs => Waves()
   .signTransactionPackage(txs)
+
+export const balance = async (address) => {
+  const response = await fetch(urlJoin(
+    'https://testnodes.wavesnodes.com/assets/balance/',
+    address
+  ), {
+    method: 'GET',
+    headers: jsonHeaders
+  })
+
+  return response.json()
+}

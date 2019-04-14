@@ -5,5 +5,6 @@ export default {
   tasksOpen: state => state.tasks.filter(t => t.status === TaskStatus.OPEN),
   tasksCompleted: state => state.tasks.filter(t => t.status === TaskStatus.COMPLETED),
   tasksRejected: state => state.tasks.filter(t => t.status === TaskStatus.REJECTED),
-  tasksProgress: state => state.tasks.filter(t => t.status === TaskStatus.PROGRESS)
+  tasksProgress: state => state.tasks.filter(t => t.status === TaskStatus.PROGRESS),
+  tasksClosed: state => state.tasks.filter(t => t.status === TaskStatus.CLOSED)
 }
