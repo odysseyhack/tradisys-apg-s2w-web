@@ -10,7 +10,7 @@ export const register = async (
   ), {
     method: 'POST',
     headers: jsonHeaders,
-    data: JSON.stringify(data)
+    body: JSON.stringify(data)
   })
 
   return response.json()
