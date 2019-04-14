@@ -4,23 +4,23 @@ import * as Mutations from './mutations-types'
 const state = {
   tasks: [
     {
-      name: 'task 1',
-      description: 'description',
-      thumbnail: 'https://www.holland.com/static/design/0BC4B5D1-A9FA-4DDE-875A-3D3F8A9C9C35-1633-fsm/gfx/9d3d-b54db275f891_1900x1050.jpg',
+      name: 'Vacancy Volunteers wanted for between-hours-care (BHC)',
+      description: 'Supervising (in total) some 150 children during recess hours.',
+      thumbnail: 'https://volunteerthehague.nl/images/thumbs/__lw440h440d1/__cw440h440/__ql60//var/mediamanager/files/vacancy_photo/1471914380740(2).jpg',
       organization: 'organisation',
       status: TaskStatus.OPEN
     },
     {
-      name: 'task 2',
-      description: 'description',
-      thumbnail: 'https://www.holland.com/static/design/0BC4B5D1-A9FA-4DDE-875A-3D3F8A9C9C35-1633-fsm/gfx/9d3d-b54db275f891_1900x1050.jpg',
+      name: 'Nurse / caregiver individual health care',
+      description: 'Stichting ThuisPoli is looking for a socially committed nurse / caregiver individual health care to assist us in providing care and maintaining a good standard of practical vocational training. The client target group of Stichting ThuisPoli is quite diverse; ranging from people who can use that bit of extra help, but lack the medical grounds for these costs to be reimbursed, to undocumented people with cancer who have no access to regular care. We are looking for someone who, among other things, can accompany our interns on client visits and help them completing their assignments for the aptitude tests.',
+      thumbnail: 'https://www.nursingworld.org/~4aeb87/globalassets/practiceandpolicy/workforce/staff.jpg ',
       organization: 'organisation',
       status: TaskStatus.OPEN
     },
     {
-      name: 'task 3',
-      description: 'description',
-      thumbnail: 'https://www.holland.com/static/design/0BC4B5D1-A9FA-4DDE-875A-3D3F8A9C9C35-1633-fsm/gfx/9d3d-b54db275f891_1900x1050.jpg',
+      name: 'Production manager live performances ',
+      description: 'Production manager for: live performances, rehearsals, video and photo recordings, sale of merchandise.',
+      thumbnail: 'https://ccskills.org.uk/images/cache/images/cache/remote/https_s3.amazonaws.com/music.images/71125c2f744ef7df8ee833bcca325007/2776-production-manager_600_300_80_s_c1.jpg',
       organization: 'organisation',
       status: TaskStatus.OPEN
     }

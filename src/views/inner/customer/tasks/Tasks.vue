@@ -12,7 +12,7 @@
             <b-col md="4">
               <b-card-img :src="item.thumbnail" class="rounded-1"></b-card-img>
             </b-col>
-            <b-col md="3" class="p-1 ml-2">
+            <b-col md="7" class="p-1 ml-2">
               <b-card-title>
                 {{item.name}}
               </b-card-title>
