@@ -149,7 +149,8 @@ export default {
         secondName: '',
         bsn: '',
         address: '',
-        birth: ''
+        role:"CUSTOMER",
+        type:"CUSTOMER"
       },
       organization: {
         name: '',
