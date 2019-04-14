@@ -119,7 +119,7 @@ export default {
         lastName: 'Tennesy',
         karma: 0,
         tokens: 0,
-        time: 46
+        time: 0
       }
     }
   },
