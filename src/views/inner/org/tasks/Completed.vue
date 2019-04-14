@@ -26,7 +26,7 @@
       </b-card-body>
 
       <b-card-footer>
-        <b-button variant="success" size="sm" @click="closeTask(item.name)">Accept!</b-button>
+        <b-button variant="success" size="sm" @click="closeTask(item.name)">Close</b-button>
       </b-card-footer>
     </b-card>
   </div>

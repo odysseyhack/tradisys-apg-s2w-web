@@ -26,7 +26,7 @@
       </b-card-body>
 
       <b-card-footer>
-        <b-button variant="warning" size="sm" @click="deleteTask(item.name)">Close it!</b-button>
+        <b-button variant="danger" size="sm" @click="deleteTask(item.name)">Cancel</b-button>
       </b-card-footer>
     </b-card>
   </div>
