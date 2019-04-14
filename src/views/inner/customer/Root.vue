@@ -39,6 +39,10 @@ export default {
         {
           title: 'Completed tasks',
           to: '/customer/tasks/completed'
+        },
+        {
+          title: 'Achievments',
+          to: '/customer/achievments'
         }
       ]
     }

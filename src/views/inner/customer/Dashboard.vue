@@ -1,6 +1,10 @@
 <template>
   <div class="container-fluid">
     <h1 class="display-4">{{ user.firstName}} {{ user.lastName}}</h1>
+    <div class="progress level">
+      <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <span class="level-info"> 8 lvl</span>
     <hr>
     <p class="h5">Overview</p>
     <b-card-group deck>
@@ -130,6 +134,16 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
+  .level {
+    height: 2px;
+    width: 25%;
+  }
+
+  .level-info {
+    margin-left: 5px;
+    color: #929292;
+  }
 
 </style>

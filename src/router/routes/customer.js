@@ -16,6 +16,10 @@ export default {
     {
       path: 'tasks/completed',
       component: () => import('@/views/inner/customer/tasks/Completed.vue')
+    },
+    {
+      path: 'achievments',
+      component: () => import('@/views/inner/customer/Achievments.vue')
     }
   ]
 }
