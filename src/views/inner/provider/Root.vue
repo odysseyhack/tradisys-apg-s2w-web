@@ -6,7 +6,7 @@
         :items="items"
       >
       </ui-sidemenu>
-      <div class="content col-lg-10">
+      <div class="content col-lg-10 p-0">
         <transition
           name="fade"
           mode="out-in"
