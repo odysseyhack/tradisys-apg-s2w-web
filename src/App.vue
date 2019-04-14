@@ -15,9 +15,13 @@ export default {
     setTimeout(() => {
       this.setWavesKeeperInitialization()
     }, 500)
+    setTimeout(() => {
+      this.authenticate()
+    }, 1000)
   },
   methods: {
     ...mapActions({
+      authenticate: 'authenticate',
       setWavesKeeperInitialization: 'setWavesKeeperInitialization'
     })
   }

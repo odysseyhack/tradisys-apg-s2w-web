@@ -34,3 +34,18 @@ export const Setup = () => {
 
 // Here, Waves is closure, with lazy value initialized inside.
 export const Waves = Setup()
+
+export const auth = async data => Waves()
+  .auth(data)
+
+export const publicState = async () => Waves()
+  .publicState()
+
+export const signTransaction = async tx => Waves()
+  .signTransaction(tx)
+
+export const signAndPublishTransaction = async tx => Waves()
+  .signAndPublishTransaction(tx)
+
+export const signTransactionPackage = async txs => Waves()
+  .signTransactionPackage(txs)
