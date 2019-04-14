@@ -4,21 +4,26 @@ import * as Mutations from './mutations-types'
 const state = {
   wavesKeeperInit: false,
   user: {
-    address: null,
-    publicKey: null
+    address: localStorage.getItem('userAddress'),
+    publicKey: localStorage.getItem('userPublicKey')
   }
 }
 
 const actions = {
-  async authenticate ({ commit }) {
-    await WavesApi.auth({ data: 'S2W App' })
+  async authenticate ({ commit, getters }) {
+    if (!getters.isAuthenticated) {
+      await WavesApi.auth({ data: 'S2W App' })
 
-    // After auth get the address:
-    const { account: { address, publicKey } } = await WavesApi.publicState()
+      // After auth get the address:
+      const { account: { address, publicKey } } = await WavesApi.publicState()
 
-    // Set user address for future games:
-    commit(Mutations.SET_USER_ADDRESS, address)
-    commit(Mutations.SET_USER_PUBLICKEY, publicKey)
+      localStorage.setItem('userAddress', address)
+      localStorage.setItem('userPublicKey', publicKey)
+
+      // Set user address for future games:
+      commit(Mutations.SET_USER_ADDRESS, address)
+      commit(Mutations.SET_USER_PUBLICKEY, publicKey)
+    }
   },
   async setWavesKeeperInitialization ({ commit }) {
     // If Waves object initialized globally already, setup it.
