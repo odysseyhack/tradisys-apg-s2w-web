@@ -10,7 +10,7 @@ export const invokeTransaction = (
       dappAddress,
       senderPublicKey,
       payment: [{
-        amount: 100000000,
+        amount: 100000,
         assetId: 'WAVES'
       }],
       call: {

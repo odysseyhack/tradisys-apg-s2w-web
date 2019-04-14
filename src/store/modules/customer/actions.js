@@ -6,16 +6,15 @@ export default {
   acceptTask ({ commit }, key) {
     commit(Mutations.SET_TASK_STATUS, { key, status: TaskStatus.PROGRESS })
   },
-  async completeTask ({ commit, rootGetters }, key) {
+  async completeTask ({ commit, getters, rootGetters }, key) {
     commit(Mutations.SET_TASK_STATUS, { key, status: TaskStatus.COMPLETED })
+    const task = getters.tasks.find(t => t.name === key)
     const tx = invokeTransaction(
-      '3MyzVARAk4HYmETR5AkHeHLMeCiueRTkEbQ',
+      task.dappAddress,
       rootGetters.user.publicKey,
-      'deposit',
+      'complete',
       []
     )
-    console.log(tx)
-    const stx = await WavesApi.signAndPublishTransaction(tx)
-    console.log(stx)
+    await WavesApi.signAndPublishTransaction(tx)
   }
 }
